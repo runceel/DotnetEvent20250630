@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection.Metadata;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace SKAgent;
+﻿namespace SKAgent;
 public class AgentNames
 {
     public const string Researcher = nameof(Researcher);
