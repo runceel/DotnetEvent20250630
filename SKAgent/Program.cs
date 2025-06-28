@@ -36,11 +36,12 @@ var plannerAgent = await agentProvider.CreatePlannerAgentAsync(kernel, "azure", 
 var sectionWriter = await agentProvider.CreateSectionWriterAsyncAsync(kernel, "azure", "gpt-4.1"); // セクション作成エージェント
 var reportFinalizer = await agentProvider.CreateReportFinalizerAsync(kernel, "azure", "gpt-4.1"); // 記事最終化エージェント
 
-// プランナーエージェントで記事の計画を作成
-await RunAgentAsync(plannerAgent, "C# .NET Blazor の入門記事");
-
 // リサーチャーエージェントで情報を収集
-//await RunAgentAsync(researcherAgent, "C# .NET Blazor");
+await RunAgentAsync(researcherAgent, "C# .NET Blazor");
+
+// プランナーエージェントで記事の計画を作成
+// await RunAgentAsync(plannerAgent, "C# .NET Blazor の入門記事");
+
 
 // セクションライターエージェントでセクションを作成
 //await RunAgentAsync(sectionWriter, """

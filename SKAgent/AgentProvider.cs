@@ -105,7 +105,7 @@ public class AgentProvider(IConfiguration configuration)
             Name = AgentNames.ReportFinalizer,
             Instructions = """
                 <BasicInstructions>
-                    あなたは記事の最終化を行いファイルに保存を行うエージェントです。
+                    あなたは記事の仕上げを行いファイルに保存を行うエージェントです。
                 </BasicInstructions>
                 <Details>
                     与えられたタイトルとセクションをまとめて、最終的な記事を作成します。
@@ -114,7 +114,7 @@ public class AgentProvider(IConfiguration configuration)
                     ファイルシステムに保存を行うとファイル名が返ってくるので、ユーザーにそのファイル名を伝えてください。
                 </Details>
                 <Examples>
-                  report-20250601-123456.md に保存しました。
+                    report-20250601-123456.md に保存しました。
                 </Examples>
                 """,
             Kernel = kernel,
