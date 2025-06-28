@@ -1,11 +1,52 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.14.36212.18 d17.14
+VisualStudioVersion = 17.14.36212.18
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChatClientHelloWorld", "ChatClientHelloWorld\ChatClientHelloWorld.csproj", "{A169AA7C-6288-4DDE-9E42-353699BC7ED5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmbeddingHelloWorld", "EmbeddingHelloWorld\EmbeddingHelloWorld.csproj", "{DD7B11EA-6FB7-434E-A8E8-609FE6A5BD81}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Evaluation", "Evaluation", "{B57BE614-4D62-4B0C-B4BF-AE603CE73EBB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EvaluationTest", "EvaluationTest\EvaluationTest.csproj", "{8D651958-ABCE-486B-8FA2-2C5969D326F1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SKAgent", "SKAgent\SKAgent.csproj", "{78CF0D15-4DE4-451E-9ACF-80F1515CE7F9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SKProcess", "SKMultiAgent\SKProcess.csproj", "{7A092AF4-1517-481F-8E77-CCE4FB00BC7A}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A169AA7C-6288-4DDE-9E42-353699BC7ED5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A169AA7C-6288-4DDE-9E42-353699BC7ED5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A169AA7C-6288-4DDE-9E42-353699BC7ED5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A169AA7C-6288-4DDE-9E42-353699BC7ED5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DD7B11EA-6FB7-434E-A8E8-609FE6A5BD81}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD7B11EA-6FB7-434E-A8E8-609FE6A5BD81}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD7B11EA-6FB7-434E-A8E8-609FE6A5BD81}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD7B11EA-6FB7-434E-A8E8-609FE6A5BD81}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8D651958-ABCE-486B-8FA2-2C5969D326F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8D651958-ABCE-486B-8FA2-2C5969D326F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8D651958-ABCE-486B-8FA2-2C5969D326F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8D651958-ABCE-486B-8FA2-2C5969D326F1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{78CF0D15-4DE4-451E-9ACF-80F1515CE7F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{78CF0D15-4DE4-451E-9ACF-80F1515CE7F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{78CF0D15-4DE4-451E-9ACF-80F1515CE7F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{78CF0D15-4DE4-451E-9ACF-80F1515CE7F9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7A092AF4-1517-481F-8E77-CCE4FB00BC7A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7A092AF4-1517-481F-8E77-CCE4FB00BC7A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7A092AF4-1517-481F-8E77-CCE4FB00BC7A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7A092AF4-1517-481F-8E77-CCE4FB00BC7A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{8D651958-ABCE-486B-8FA2-2C5969D326F1} = {B57BE614-4D62-4B0C-B4BF-AE603CE73EBB}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {AF280D47-9A7F-4763-A734-A5E7FA752FF7}
