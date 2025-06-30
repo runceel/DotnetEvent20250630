@@ -118,10 +118,7 @@ public sealed class AOAIEvaluationTest
                 """)];
 
         // AI を使って応答を取得
-        var response = await chatClient.GetResponseAsync(messages, new ChatOptions
-        {
-            Temperature = 0,
-        });
+        var response = await chatClient.GetResponseAsync(messages);
 
         // 応答の内容を評価
         EvaluationResult result = await scenarioRun.EvaluateAsync(
