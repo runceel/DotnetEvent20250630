@@ -131,6 +131,7 @@ public sealed class AOAIEvaluationTest
         NumericMetric relevance = result.Get<NumericMetric>(RelevanceEvaluator.RelevanceMetricName);
         Assert.IsFalse(relevance.Interpretation!.Failed, relevance.Reason);
         Assert.IsTrue(relevance.Interpretation.Rating is EvaluationRating.Good or EvaluationRating.Exceptional);
+        
         NumericMetric equivalence = result.Get<NumericMetric>(EquivalenceEvaluator.EquivalenceMetricName);
         Assert.IsFalse(equivalence.Interpretation!.Failed, equivalence.Reason);
         Assert.IsTrue(equivalence.Interpretation.Rating is EvaluationRating.Good or EvaluationRating.Exceptional);

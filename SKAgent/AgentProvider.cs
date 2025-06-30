@@ -26,10 +26,7 @@ public class AgentProvider(IConfiguration configuration)
         // AzureAIAgent を生成し返す
         return new AzureAIAgent(
             agentDefinition,
-            agentClient)
-        {
-            Description = "記事のセクションを作成するために必要な情報を収集するエージェントです。",
-        };
+            agentClient);
     }
 
     // ChatCompletionAgent を使用して、記事を作成するための計画を立てるエージェントを作成する
@@ -37,7 +34,6 @@ public class AgentProvider(IConfiguration configuration)
     {
         // カーネルを複製または新規作成
         var kernel = baseKernel?.Clone() ?? new();
-        var templateFactory = new KernelPromptTemplateFactory();
         // 記事プランナーエージェントを生成し返す
         return Task.FromResult<Agent>(new ChatCompletionAgent
         {
@@ -50,7 +46,6 @@ public class AgentProvider(IConfiguration configuration)
                     記事全体のタイトルとセクションのタイトルと、各セクションを書くためにインターネットで調べるキーワードを含む計画を立てます。
                 </Details>
                 """,
-            Description = "記事を作成するための計画を立てます。",
             Kernel = kernel,
             Arguments = new(new OpenAIPromptExecutionSettings
             {
@@ -66,7 +61,6 @@ public class AgentProvider(IConfiguration configuration)
     {
         // カーネルを複製または新規作成
         var kernel = baseKernel?.Clone() ?? new();
-        var templateFactory = new KernelPromptTemplateFactory();
         // セクションライターエージェントを生成し返す
         return Task.FromResult<Agent>(new ChatCompletionAgent
         {
@@ -81,7 +75,6 @@ public class AgentProvider(IConfiguration configuration)
                 </Details>
                 """,
             Kernel = kernel,
-            Description = "記事のタイトルと、記事のセクションタイトルと、参考情報を元に記事のセクションを作成します。",
             Arguments = new(new OpenAIPromptExecutionSettings
             {
                 ServiceId = serviceId,
@@ -98,7 +91,6 @@ public class AgentProvider(IConfiguration configuration)
         var kernel = baseKernel?.Clone() ?? new();
         kernel.Plugins.AddFromType<FileSystemPlugin>();
 
-        var templateFactory = new KernelPromptTemplateFactory();
         // レポートファイナライザーエージェントを生成し返す
         return Task.FromResult<Agent>(new ChatCompletionAgent
         {
@@ -118,7 +110,6 @@ public class AgentProvider(IConfiguration configuration)
                 </Examples>
                 """,
             Kernel = kernel,
-            Description = "記事のタイトルと、セクションをまとめて、最終的な記事を作成します。",
             Arguments = new(new OpenAIPromptExecutionSettings
             {
                 ServiceId = serviceId,

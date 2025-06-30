@@ -37,7 +37,7 @@ var sectionWriter = await agentProvider.CreateSectionWriterAsyncAsync(kernel, "a
 var reportFinalizer = await agentProvider.CreateReportFinalizerAsync(kernel, "azure", "gpt-4.1"); // 記事最終化エージェント
 
 // リサーチャーエージェントで情報を収集
-await RunAgentAsync(researcherAgent, "C# .NET Blazor");
+//await RunAgentAsync(researcherAgent, "C# .NET Blazor");
 
 // プランナーエージェントで記事の計画を作成
 // await RunAgentAsync(plannerAgent, "C# .NET Blazor の入門記事");
@@ -54,10 +54,10 @@ await RunAgentAsync(researcherAgent, "C# .NET Blazor");
 //    """);
 
 // 最終稿を作成
-//await RunAgentAsync(reportFinalizer, """
-//    タイトル：犬の可愛さ
-//    本文：小型犬は吠えている様子も可愛い。
-//    """);
+await RunAgentAsync(reportFinalizer, """
+    タイトル：犬の可愛さ
+    本文：小型犬は吠えている様子も可愛い。
+    """);
 
 // 指定したエージェントにメッセージを送り、結果を出力する関数
 static async Task RunAgentAsync(Agent agent, string userMessage)

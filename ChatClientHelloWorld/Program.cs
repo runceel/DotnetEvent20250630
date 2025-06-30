@@ -18,7 +18,7 @@ var aoai = new AzureOpenAIClient(
     new(configuration["AzureAIFoundry:Endpoint"]!),
     new AzureCliCredential());
 // Azure OpenAI のチャットクライアントを構築（gpt-4.1）
-var aoaiChatClient = aoai.GetChatClient("gpt-4.1")
+IChatClient aoaiChatClient = aoai.GetChatClient("gpt-4.1")
     .AsIChatClient()
     .AsBuilder()
     .UseLogging(loggerFactory) // ログ出力を有効化
@@ -30,7 +30,7 @@ var aiInference = new ChatCompletionsClient(
     new(configuration["AzureAIFoundry:DeepSeekEndpoint"]!),
     new AzureKeyCredential(configuration["AzureAIFoundry:DeepSeekKey"]!));
 // Inference サービスのチャットクライアントを構築（DeepSeek-V3-0324）
-var aiInferenceChatClient = aiInference.AsIChatClient("DeepSeek-V3-0324")
+IChatClient aiInferenceChatClient = aiInference.AsIChatClient("DeepSeek-V3-0324")
     .AsBuilder()
     .UseLogging(loggerFactory) // ログ出力を有効化
     .UseFunctionInvocation()  // ツール呼び出しを有効化
@@ -38,6 +38,8 @@ var aiInferenceChatClient = aiInference.AsIChatClient("DeepSeek-V3-0324")
 
 // 2つのチャットクライアントでAIに問い合わせ
 await InvokeAIAsync(aoaiChatClient);
+Console.WriteLine("=====================================");
+Console.WriteLine("");
 await InvokeAIAsync(aiInferenceChatClient);
 
 // チャットクライアントにツールを渡して問い合わせを行う関数
