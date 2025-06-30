@@ -129,7 +129,7 @@ class FileSystemPlugin
         [Description("保存する記事の内容。")] string text)
     {
         // ファイル名を自動生成し、記事を保存
-        var fileName = $"report-{DateTime.UtcNow:yyyyMMdd-HHmmss}.md";
+        var fileName = $"../../../report-{DateTime.UtcNow:yyyyMMdd-HHmmss}.md";
         await File.WriteAllTextAsync(fileName, text);
         return fileName;
     }

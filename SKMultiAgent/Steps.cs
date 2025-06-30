@@ -22,6 +22,8 @@ public class InputThemeStep : KernelProcessStep
         // ユーザーに記事のテーマを入力させる
         Console.Write("記事のテーマを入力してください: ");
         var theme = Console.ReadLine()?.Trim();
+        Console.WriteLine();
+
         if (string.IsNullOrEmpty(theme))
         {
             // テーマが空の場合は例外を投げる
@@ -62,6 +64,8 @@ public class PlanningStep : KernelProcessStep
 
         // 記事タイトルとセクションを出力
         Console.WriteLine($"記事タイトル: {plan.Title}, セクション: {string.Join(", ", plan.Sections.Select(x => x.Title))}");
+        Console.WriteLine();
+
         // タイトルとセクションプランをイベントとして発行
         await context.EmitEventAsync(PublishTitle, plan.Title);
         await context.EmitEventAsync(PublishSectionPlan, plan.Sections);
@@ -107,6 +111,7 @@ public class WriteSectionStep : KernelProcessStep
 
         // セクションをイベントとして発行
         await context.EmitEventAsync(PublishSection, section);
+        Console.WriteLine();
     }
 }
 
@@ -133,6 +138,7 @@ public class FinalizeReportStep : KernelProcessStep
         await finalResult.Thread.DeleteAsync();
         // 最終稿の内容を出力
         Console.WriteLine(finalResult.Message.Content);
+        Console.WriteLine();
     }
 }
 
